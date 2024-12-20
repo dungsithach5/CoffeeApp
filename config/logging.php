@@ -6,6 +6,13 @@ use Monolog\Handler\SyslogUdpHandler;
 
 return [
 
+    'channels' => [
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['single', 'slack'],
+            'ignore_exceptions' => false,
+        ],
+    ],
     /*
     |--------------------------------------------------------------------------
     | Default Log Channel
